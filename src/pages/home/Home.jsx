@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import './home.css'
 import herobanner from '../../assets/netflix_react_assets/assets/hero_banner.jpg'
 import hero_title from '../../assets/netflix_react_assets/assets/hero_title.png'
@@ -8,7 +8,25 @@ import info_icon from "../../assets/netflix_react_assets/assets/info_icon.png"
 import Navbar from "../../components/navbar/navbar";
 import TitleCards from "../../components/titlecards/titlecards";
 import Footer from '../../components/footer/footer'
+
+
+import { MyContext } from "../../App";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+
+    // const {loginAuth}=useContext(MyContext)
+    // const navigate=useNavigate()
+    // useEffect(()=>{
+    //     if(loginAuth){
+    //         console.log('netered',loginAuth)
+
+    //     }else{
+    //         console.log('re-rendered to the login due to no login')
+    //         navigate('/login')
+    //     }
+    // },[])
+
     return (
         <div className="home">
             <Navbar />

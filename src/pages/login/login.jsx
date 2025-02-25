@@ -1,13 +1,37 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect,useContext} from "react";
 import './login.css'
 import logo from '../../assets/netflix_react_assets/assets/logo.png'
 import { login, signup } from '../../firebase'
+// import { useNavigate } from "react-router-dom";
+
+
+import { MyContext } from "../../App";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
+
+
+    
+    // const {loginAuth}=useContext(MyContext)
+    // console.log('from loginAut',loginAuth)
+    // const navigate=useNavigate()
+    // useEffect(()=>{
+    //     if(loginAuth==true){
+    //         console.log('netered to login',loginAuth)
+    //         navigate('/')
+    //     }else{
+    //         console.log('it is nrt loggened ')
+    //     }
+    // },[])
+    
+
     const [SighnState, setSingnState] = useState('Sign In')
     const [name,setName]=useState('')
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
     const user_auth=async (event)=>{
+        
+        console.log('entred to the sighnin component ')
         event.preventDefault();
         if(SighnState=='Sign In'){
             await login(email,password)

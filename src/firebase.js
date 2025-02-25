@@ -40,6 +40,7 @@ const signup = async (name, email, password) => {
 
 const login = async (email, password) => {
     try {
+        console.log('entered to the login')
         signInWithEmailAndPassword(auth, email, password)
     } catch (error) {
         toast.error(error.code)
